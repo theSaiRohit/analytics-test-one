@@ -190,4 +190,39 @@
       </div>
     </section>
   </body>
+
+  <script type="text/javascript">
+    window.setOptiCookieConsent = (consent) => {
+      localStorage.setItem("opti_consent", consent);
+    };
+  </script>
+  <script
+    type="text/javascript"
+    async
+    src="https://cdn-stag.optimeleon.com/sai-jkswo/net-jksx0/v1.main.js"
+  ></script>
+  <script type="text/javascript" async>
+    !(function (e, t, n, o, s, a, c) {
+      e.optimeleon ||
+        ((s = e.optimeleon =
+          function () {
+            s.callMethod
+              ? s.callMethod.apply(s, arguments)
+              : s.queue.push(arguments);
+          }),
+        (s.push = s),
+        (s.queue = []),
+        ((a = t.createElement(n)).async = !0),
+        (a.src =
+          "https://cdn-stag.optimeleon.com/sai-jkswo/net-jksx0/v1.main.js"),
+        (c = t.getElementsByTagName(n)[0]).parentNode.insertBefore(a, c));
+    })(window, document, "script");
+    optimeleon("init", true, true);
+  </script>
+
+  <script type="text/javascript">
+    !(function () {
+      window.setOptiCookieConsent("yes");
+    })();
+  </script>
 </html>
