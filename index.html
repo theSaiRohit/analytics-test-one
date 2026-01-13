@@ -67,7 +67,8 @@
                     <a class="nav-link" href="about.html"> About</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="service.html">Services</a>
+                    <!-- <a class="nav-link" href="service.html">Services</a> -->
+                    <button type="button" onclick="goToServices()">Services Click</button>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="https://sairohit.in">Contact Us</a>
@@ -207,33 +208,44 @@
   </script> -->
 
   <script type="text/javascript">
-    window.setOptiCookieConsent = (consent) => {
-      localStorage.setItem("opti_consent", consent);
-    };
+window.setOptiCookieConsent = function(consent) {
+    localStorage.setItem("opti_consent", consent);
+  };
+  
+   // Auto-accept consent if explicit consent mode is disabled
+   window.setOptiCookieConsent("yes");
   </script>
 
   <script type="text/javascript" async>
-    !(function (e, t, n, o, s, a, c) {
-      e.optimeleon ||
-        ((s = e.optimeleon =
-          function () {
-            s.callMethod
-              ? s.callMethod.apply(s, arguments)
-              : s.queue.push(arguments);
-          }),
-        (s.push = s),
-        (s.queue = []),
-        ((a = t.createElement(n)).async = !0),
-        (a.src =
-          "https://webappdatastaging.blob.core.windows.net/ser-r31sv/sai-r31t5/debug/v1.main.js"),
-        (c = t.getElementsByTagName(n)[0]).parentNode.insertBefore(a, c));
-    })(window, document, "script");
-    optimeleon("init", true, true);
+!(function (h, i, e) {
+  var t = 2000;
+  var n = h.createElement("style");
+  n.id = e;
+  n.innerHTML = "body{opacity:0}";
+  h.head.appendChild(n);
+  i.rmfk = function () {
+    var t = h.getElementById(e);
+    t && t.parentNode.removeChild(t);
+  };
+  setTimeout(i.rmfk, t);
+})(document, window, "optimeleon-overlay");
+ 
+  !function(e,t,n,o,a,s,u){e.optimeleon||(a=e.optimeleon=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},a.push=a,a.queue=[],(s=t.createElement(n)).async=!0,s.src="https://cdn-stag.optimeleon.com/sai-caonf/sai-caonl/v1.main.js",(u=t.getElementsByTagName(n)[0]).parentNode.insertBefore(s,u))}(window,document,"script");
+  optimeleon("init",true,true);
   </script>
 
-    <!-- <script
-    type="text/javascript"
-    async
-    src="https://webappdatastaging.blob.core.windows.net/ser-r31sv/sai-r31t5/debug/v1.main.js"
-  ></script> -->
+  <script>
+  function goToServices() {
+    // Track the event
+    if (window.optimeleon) {
+      optimeleon("track", "cross_domain_tracking");
+    }
+
+    // Small delay to make sure tracking fires
+    setTimeout(function () {
+      window.location.href = "https://services.sairohit.in/services";
+    }, 300);
+  }
+</script>
+
 </html>
